@@ -1,0 +1,25 @@
+Install Tomcat 9.0.34 on Ubuntu 19.10.1 for Raspberry Pi
+
+- Download Tomcat from http://tomcat.apache.org
+    - Select the version of choice under "Download" on the left.
+    - Under "Binary Distributions" click the "tar.gz" link under "Embedded"
+    - The file will download as "apache-tomcat-<ver>.tar.gz"
+- Extract the install using the command "tar xvfz apache-tomcar-<ver>.tar.gz"
+- Move the extracted install dir to your location of choice
+    - I put mine in /opt
+- Make a link in opt to abstract out the version number
+    - cd /opt
+    - sudo chmod 777 .
+    - ln -s apache-tomcat-<ver> tomcat (Now you can just refer to /opt/tomcat)
+- Configure Tomcat
+    - Add an admin user
+        - cd /opt/tomcat/conf
+        - Edit tomcat-users.xml
+        - Add the following lines within the <tomcat-users></tomcat-users> section:
+            <role rolename="manager-gui"/>
+            <user username="<username>" password="<password>" roles="manager-hui"/>
+- Run Tomcat by executing '/opt/tomcat/bin/startup.sh'
+
+
+- Configure Tomcat to start automatically on boot up
+    - COMMING SOON
