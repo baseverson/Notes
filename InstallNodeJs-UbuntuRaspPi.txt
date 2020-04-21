@@ -1,0 +1,4 @@
+Install Node.js on Ubuntu for Raspberry Pi
+
+- Download Node.js from http://nodejs.org. (Downloads tab)
+    - Select the "ARMv8" version under "Linux Binaries (ARM)"
