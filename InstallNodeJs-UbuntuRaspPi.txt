@@ -2,3 +2,15 @@ Install Node.js on Ubuntu for Raspberry Pi
 
 - Download Node.js from http://nodejs.org. (Downloads tab)
     - Select the "ARMv8" version under "Linux Binaries (ARM)"
+    - File will download as 'node=<ver>-linux-arm64.tar.xz'
+- Decompress using "xunz" and extract using "tar xvf"
+- Move the extracted node install directory to your location of choice
+    - I moved it to /opt
+- Create a link so the path is version agnostic
+    - cd /opt
+    - sudo chmod 777 .
+    - ln -s node-<ver>-linux-arm64 node
+- Add node to your path
+    - Edit !/.profile
+    - Add the line "PATH=$PATH:/opt/node/bin"
+
