@@ -1,0 +1,14 @@
+Redis
+
+sudo apt-get install redis-server
+
+Command line client: 'redis-cli'
+
+To shutdown the database: 'redis-cli shutdown'
+
+To enable persistence (writing data to the disk), edit /etc/redis/redis.conf.
+  - Find 'appendonly no' and change it to 'appendonly yes'
+  - This will cause every DB action to immediately be written to disk
+  - Persistent data is stored at /var/lib/redis/appendonly.aof (or whatever file is specified in the Redis conf file)
+
+
