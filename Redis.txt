@@ -6,9 +6,16 @@ Command line client: 'redis-cli'
 
 To shutdown the database: 'redis-cli shutdown'
 
+Data Persistence
 To enable persistence (writing data to the disk), edit /etc/redis/redis.conf.
   - Find 'appendonly no' and change it to 'appendonly yes'
   - This will cause every DB action to immediately be written to disk
   - Persistent data is stored at /var/lib/redis/appendonly.aof (or whatever file is specified in the Redis conf file)
+  
+Network Interfaces
+By default, Redis will only accept connections via the localhost (127.0.0.1) network interface. To enable access via additional interfaces, edit /etc/redis/redis.conf.
+  - Find the line 'bind 127.0.0.1 ::1'
+  - Change it to 'bind 127.0.0.1 <ip of additional network interface>'
+  
 
 
